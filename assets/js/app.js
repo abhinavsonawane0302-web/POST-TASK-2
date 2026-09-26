@@ -8,7 +8,7 @@ const body =document.getElementById("body")
 const addbtn =document.getElementById("addbtn")
 const updatebtn =document.getElementById("updatebtn")
 const commentContainer =document.getElementById("commentContainer")
-const table =document.getElementById("table")
+
  
 
 const BASE_URL  ="https://jsonplaceholder.typicode.com/"
@@ -104,6 +104,13 @@ function oncreate(ele) {
             commentContainer.prepend(newComment)
             form.reset()
 
+
+              Swal.fire({
+                text: "Your comment is created successfully!!!",
+                icon: "success",
+                timer: 2000
+            })
+
         }else{
             cl(`something went wrong while get data!!!`)
         }
@@ -141,6 +148,12 @@ function onEdit(ele) {
 
             addbtn.classList.add("d-none")
             updatebtn.classList.remove("d-none")
+
+             Swal.fire({
+                text: "Your comment is edit successfully!!!",
+                icon: "success",
+                timer: 2000
+            }) 
 
         }
     }
@@ -183,6 +196,12 @@ function onupdate() {
             addbtn.classList.remove("d-none")
 
             form.reset()
+
+             Swal.fire({
+                text: "Your comment is update successfully!!!",
+                icon: "success",
+                timer: 2000
+            }) 
         }
     }
 
@@ -204,8 +223,15 @@ function ondelete(ele) {
                 
                 ele.closest(".col-4").remove()
 
+
             }
         }
+
+        Swal.fire({
+                text: "Your comment is delete successfully!!!",
+                icon: "success",
+                timer: 2000
+            }) 
 }
 
 
